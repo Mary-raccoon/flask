@@ -1,0 +1,12 @@
+form {
+    display: inline-block;
+    margin: 50px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+}
+.result {
+    display: inline-block;
+    margin: 50px;
+}
