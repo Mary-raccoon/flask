@@ -1,0 +1,10 @@
+
+form {display: inline-block;
+    margin: 30px;
+}
+.body {
+    display: inline-block;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}

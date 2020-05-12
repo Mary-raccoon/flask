@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="body">
+        <h1>Counter</h1>
+        <h5>{{counter}} times</h5>
+        <form action="/destroy_session" method="post">
+            <input type="submit" value="Clear">
+        </form>
+        <form action="/plus_two" method="post">
+            <button>+2</button>
+        </form>
+        <form action="/plus_y" method="post">
+            <label for="num">Choose your number</label>
+            <input type="text" name='num'>
+            <button>Go</button>
+        </form>
+    </div>
+</body>
+</html>
