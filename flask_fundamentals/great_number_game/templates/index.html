@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Great Number Game</title>
+    
+</head>
+<body>
+
+    <div class="card text-center">
+        <div class="card-header">
+           <h5>Welcome to the Great Number Game</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-title">I am thinking of a number between 1 and 100. </p>
+            <p class="card-text">Take a guess!</p>
+            <div class="input-container {{ info['css_class'] }}">
+                <h2>{{ info['message'] }}</h2>
+                <h3>{{ session["count"] }} guess(es)!</h3>
+                {% if session['guess'] == session['random'] or session["count"] > 4 %}
+                    <form action="/reset">
+                        <input type="submit" value='Play Again' class="btn btn-success">
+                    </form>
+                {% else %}
+                    <form action="/guess" method="post" >
+                        <div class="form-group mx-sm-3 mb-2">
+                            <input type="text" name="guessed_number" class="form-control">
+                        </div>
+                        <button class="btn btn-secondary">Submit</button>
+            
+                    </form><br>
+                {% endif %}
+            </div>
+        </div><br>
+        <div class="card-footer text-muted"> </div>
+      </div>
+</body>
+</html>

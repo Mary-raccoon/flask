@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ va<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,15 @@
         <h1>Counter</h1>
         <h5>{{counter}} times</h5>
         <form action="/destroy_session" method="post">
-            <input type="submit" value="Clear">
+            <input class="btn btn-danger" type="submit" value="Clear">
         </form>
         <form action="/plus_two" method="post">
-            <button>+2</button>
+            <button class="btn btn-success">+2</button>
         </form>
         <form action="/plus_y" method="post">
             <label for="num">Choose your number</label>
             <input type="text" name='num'>
-            <button>Go</button>
+            <button class="btn btn-primary">Go</button>
         </form>
     </div>
 </body>

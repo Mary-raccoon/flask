@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <div id="block1">
+        <h2>Your gold: {{session['gold']}}</h2>
+        <form action="/reset">
+            <button class="btn btn-outline-danger">Reset the game</button>
+        </form>
+    </div>
+    <div id="block2"> 
+        <div class="block">
+            <h5 class="card-title">Farm</h5>
+            <p class="card-text">(earns 10-20 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="id" value="farm">
+                <button class="btn btn-primary">Find gold</button> 
+            </form>
+        </div>
+
+        <div class="block">
+            <h5 class="card-title">Cave</h5>
+            <p class="card-text">(earns 5-10 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="id" value="cave">
+                <button class="btn btn-primary">Find gold</button>
+            </form>
+        </div>
+
+        <div class="block">
+            <h5 class="card-title">House</h5>
+            <p class="card-text">(earns 2-5 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="id" value="house">
+                <button class="btn btn-primary">Find gold</button>
+            </form>
+        </div>
+
+        <div class="block">
+            <h5 class="card-title">Casino</h5>
+            <p class="card-text">(earns/takes 0-50 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="id" value="casino">
+                <button class="btn btn-primary">Find gold</button>
+            </form>
+        </div>
+        </form>
+    </div>
+    <div id="block3" >
+        <p>Activities:</p>
+        <div class="activ">
+            {% for x in session['activity']: %}
+                {{ x|safe }}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
