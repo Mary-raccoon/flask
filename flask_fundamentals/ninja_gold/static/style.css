@@ -4,12 +4,15 @@
     width: 90%;
     margin: 10px;      
 }
+
 #block1, #block2 {
     text-align: center;
 }
+
 #block3 p, div {
     margin-left: 7%;
 }
+
 .activ {
     overflow: scroll;
     height: 200px;
@@ -25,9 +28,3 @@
     padding: 20px;
     margin: 10px;
 }
-textarea{
-    width: 100%;
-}
-/* form {
-    align-items: center;
-} */

@@ -5,24 +5,20 @@ app.secret_key = "secret ninja gold"
 
 @app.route('/', methods= ['GET', 'POST'])
 def index():
-    
     if 'gold' not in session:
         session['gold'] = 0
     else:
         session['gold'] = session['gold']
     
-    
     return render_template('index.html')
 
 @app.route('/process_money', methods = ['GET', 'POST'])
 def process_money():
-    
     if 'gold' not in session:
         session['gold'] = 0
     if 'activity' not in session:
         session['activity'] = []
     print(session['activity']) 
-    
     
     if request.form['id']=='farm':
         print(request.form['id'])
@@ -56,10 +52,11 @@ def process_money():
     print(session['gold'])  
     print(session['activity'])
     return redirect('/')
+    
 @app.route('/reset')
 def reset():
     session.clear()
     return redirect('/')
-    
+
 if __name__ == "__main__":
     app.run(debug=True)

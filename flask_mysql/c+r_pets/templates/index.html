@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Create and Read Pets</title>
+</head>
+<body>
+    <h1>All the pets!</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr scope="col">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+            </th>
+        </thead>
+        <tbody>
+            {% for p in pets: %}
+            <tr scope="row">
+                <td>{{ p["pet_id"] }}</td>
+                <td>{{ p["name"] }}</td>
+                <td>{{ p["type"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="/create_pet" method="post">
+        <h1>Add A Pet</h1>
+        <p><label for="name">Name: <input type="text" name="name" class="form-control"></label></p>
+        <p><label for="type">Type: <input type="text" name="type" class="form-control"></label></p>
+        <button class="btn btn-primary">Add</button>
+    </form>
+</body>
+</html>
