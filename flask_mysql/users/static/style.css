@@ -1,0 +1,9 @@
+body {
+    padding: 20px;
+    background-color: bisque;
+}
+.container {
+    background-color: #f8f9fa;
+    margin-top: 20px;
+    padding: 5%;
+}
