@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Dojo Survey</title>
+
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+            {% for message in messages %}            
+                <p style="color: red;">{{message}}</p>                  
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/result" method="post">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Your name: </label>
+            <input type="text" name="full_name"> 
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Dojo location: </label>
+            <select class="form-control" id="exampleFormControlSelect1" name="location">
+                <option value="">-----</option>
+                <option value="San jose">San Jose</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Los Angeles">Los Angeles</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Favorite languages: </label>
+            <select class="form-control" id="exampleFormControlSelect1" name="language">
+                <option value="">-----</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Javascript">Javascript</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comment (optional): </label>
+            <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div><input type="submit" class="btn btn-primary mb-2" value="Button"></div>
+        </div>
+    </form>
+</body>
+</html>

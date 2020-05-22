@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Dojo Survey Result</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+            {% for message in messages %}            
+                <p style="color: red;">{{message}}</p>                  
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="result">
+        <div>
+            <h1>Submited Info</h1>
+            <p>Name: {{ session['full_name']}}</p>
+            <p>Dojo Location: {{session['location']}}</p>
+            <p>Favorite Language: {{session['language']}}</p>
+            <p>Comment: {{session['comment']}}</p>
+        </div>
+        <div>
+            <a class="btn btn-primary" href="/" role="button">Go back</a>
+        </div>
+    </div>
+</body>
+</html>
