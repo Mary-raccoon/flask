@@ -1,0 +1,9 @@
+body {
+    margin: 50px;
+}
+#log, #reg {
+    display: inline-block;
+    width: 30%;
+    margin: 5% 10% 5% 0%;
+    vertical-align: top;
+}
