@@ -1,0 +1,47 @@
+body {
+    margin: 2%;
+}
+
+#log, #reg, .left, .right {
+    display: inline-block;
+    width: 48%;
+    padding: 1% 5% 5% 5%;
+    vertical-align: top;
+}
+
+.top {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.top h2, .top h3, .top a {
+    display: inline-block;
+    width: 28%;
+    margin: 2%;
+}
+.right {
+    border-left: 4px solid grey;
+}
+.right p, .right form {
+    display: inline-block;
+
+}
+.left {
+    overflow: scroll;
+    height: 400px;
+}
+
+.img:hover {
+    width: 35px;
+    height: 35px; 
+}
+
+.pic {
+    height: 40px;
+}
+.btn {
+    vertical-align: text-bottom !important;
+}
+td {
+    max-width: 458px;
+}
